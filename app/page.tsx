@@ -17,7 +17,7 @@ export default function Home() {
       {/* Black → transparent overlay, bottom to top */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-black to-transparent"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-black/60 via-black/15 via-40% to-transparent"
       />
 
       {/* Header — logo centred */}
