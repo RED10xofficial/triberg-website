@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
+}
+
+body {
+  background: #071a24;
+  color: #ffffff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-pulse-dot {
+    animation: none;
+  }
+}
